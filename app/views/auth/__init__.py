@@ -5,8 +5,6 @@ from flask import Blueprint
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login')
-def login():
-    return render_template('auth/login.html')
+from . import views
 
 
