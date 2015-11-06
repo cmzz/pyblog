@@ -3,6 +3,7 @@ __author__ = 'Andy'
 from flask.ext.login import UserMixin, AnonymousUserMixin
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from . import login_manager
 
 
 class User(UserMixin, db.Model):
@@ -24,3 +25,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))

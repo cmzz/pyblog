@@ -9,10 +9,10 @@ class Config:
     """
     公共配置
     """
-    SERCET_KEY = os.environ.get('SERCET_KEY') or 'iegcmzz2_5nadet384'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'iegcmzz2_5nadet384'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    SQLALCHEMY_DATABASE_URI = "mysql://root:root@localhost/pymysql"
+    SQLALCHEMY_DATABASE_URI = "mysql+cymysql://root:root@localhost/pyblog"
     BLOG_ADMIN = os.environ.get('BLOG_ADMIN')
 
     @staticmethod
