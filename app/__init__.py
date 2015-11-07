@@ -16,6 +16,7 @@ login_manager.session_protection = "Strong"
 login_manager.login_view = "auth.login"
 
 
+# 通过通配文件初始化app
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
@@ -27,10 +28,13 @@ def create_app(config_name):
     login_manager.init_app(app)
 
 
-    # 注册蓝图
+    # 所有蓝图都在这里注册
     from .views import main as main_bp
     from .views.auth import auth as auth_bp
+    from .views.admin import admin as admin_bp
+
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp, url_prefix="/auth")
+    app.register_blueprint(admin_bp, url_prefix="/admin")
 
     return app
