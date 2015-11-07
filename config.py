@@ -17,7 +17,6 @@ class Config:
 
     @staticmethod
     def init_app(app):
-
         pass
 
 
@@ -30,7 +29,6 @@ class TestConfig(Config):
 
 
 class ProductionConfig(Config):
-
     pass
 
 
@@ -41,7 +39,3 @@ config = {
 
     "default": DevelopmentConfig
 }
-
-
-
-

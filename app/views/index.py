@@ -14,6 +14,4 @@ def index():
 @main.route('/test')
 @login_required
 def test():
-
     return render_template('test.html')
-

@@ -3,7 +3,7 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}
-登陆
+    登陆
 {% endblock %}
 
 {% block content %}
@@ -11,8 +11,15 @@
         <div class="page-header">
             <h1>login</h1>
         </div>
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+        {% endfor %}
+
         <div class="col-md-4">
-        {{ wtf.quick_form(form) }}
+            {{ wtf.quick_form(form) }}
         </div>
     </div>
 {% endblock %}
