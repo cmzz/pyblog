@@ -6,7 +6,7 @@ __author__ = 'Andy'
 """
 
 from app import create_app, db
-from app.models import User
+from app.models import User, Post
 from flask_script import Manager, Shell, Server
 from flask_migrate import Migrate, MigrateCommand
 
@@ -18,7 +18,7 @@ migrate = Migrate(app, db)
 
 # 创建一个上下文
 def make_shell_context():
-    return dict(app=app, db=db, User=User)
+    return dict(app=app, db=db, User=User, Post=Post)
 
 
 # 启动控制台命令
