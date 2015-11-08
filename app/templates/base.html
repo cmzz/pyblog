@@ -18,10 +18,13 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ url_for("main.index") }}">首页 <span class="sr-only">(current)</span></a></li>
+                    <li {% if "index" == active_page %} class="active"{% endif
+  %}><a href="{{ url_for("main.index") }}">首页 <span class="sr-only">(current)</span></a></li>
                     {% if current_user.is_authenticated %}
-                        <li><a href="{{ url_for("admin.index") }}">文章管理</a></li>
-                        <li><a href="{{ url_for("admin.post_add") }}">发布文章</a></li>
+                        <li {% if "admin/index" == active_page %} class="active"{% endif
+  %}><a href="{{ url_for("admin.index") }}">文章管理</a></li>
+                        <li {% if "admin/post_add" == active_page %} class="active"{% endif
+  %}><a href="{{ url_for("admin.post_add") }}">发布文章</a></li>
                     {% endif %}
 
 
