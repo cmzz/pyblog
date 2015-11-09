@@ -1,0 +1,7 @@
+
+td.post_tools {
+    width: 200px !important;
+}
+.post-list tr:first-child td {
+    border: none !important;
+}
