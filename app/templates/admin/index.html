@@ -5,12 +5,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="media">
-                    <div class="media-body">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        ...
-                    </div>
-                </div>
+            <table class="table">
+                {% for post in posts %}
+                    <tr>
+                        <td scope="row">#{{ post.id }}</td>
+                        <td>{{ post.title }}</td>
+                        <td class="post_tools">[ 删除 ] ｜ ［ 编辑 ］</td>
+                    </tr>
+                {% endfor %}
+            </table>
             </div>
         </div>
     </div>

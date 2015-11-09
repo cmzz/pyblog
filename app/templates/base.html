@@ -1,5 +1,10 @@
 {% extends "bootstrap/base.html" %}
 
+{% block styles %}
+<link href="{{ url_for("static", filename="css/style.css") }}" />
+{{ super() }}
+{% endblock %}
+
 {% block title %}PyBlog{% endblock %}
 
 {% block navbar %}

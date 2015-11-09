@@ -19,17 +19,13 @@ from .forms import NewPostForm
 @admin.route('/index')
 @login_required
 def index():
-    return render_template('admin/index.html')
+
+    posts = Post.query.order_by(Post.at.desc()).all()
 
 
-"""
-文章列表
-"""
+    return render_template('admin/index.html', posts = posts)
 
 
-@admin.route('/post')
-def post():
-    pass
 
 
 """
